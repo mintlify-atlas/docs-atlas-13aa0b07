@@ -1,0 +1,233 @@
+{
+  "projectType": "saas",
+  "projectName": "Wokwi",
+  "projectDescription": "Online electronics and microcontroller simulator for Arduino, ESP32, Raspberry Pi Pico, STM32, and more",
+  "theme": "aspen",
+  "primaryColor": "#040404",
+  "lightColor": null,
+  "darkColor": null,
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "supported-hardware",
+              "faq"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/diagram-editor",
+              "guides/keyboard-shortcuts",
+              "guides/debugger",
+              "guides/gdb-debugging",
+              "guides/serial-monitor",
+              "guides/logic-analyzer",
+              "guides/libraries",
+              "guides/micropython",
+              "guides/circuitpython",
+              "guides/esp32",
+              "guides/esp32-wifi",
+              "guides/custom-chips"
+            ]
+          },
+          {
+            "group": "VS Code Extension",
+            "pages": [
+              "vscode/getting-started",
+              "vscode/project-config",
+              "vscode/diagram-editor",
+              "vscode/debugging",
+              "vscode/offline-mode",
+              "vscode/tips-and-tricks",
+              "vscode/migrating",
+              "vscode/micropython"
+            ]
+          },
+          {
+            "group": "Wokwi CI",
+            "pages": [
+              "wokwi-ci/getting-started",
+              "wokwi-ci/cli-installation",
+              "wokwi-ci/cli-usage",
+              "wokwi-ci/idf-usage",
+              "wokwi-ci/github-actions",
+              "wokwi-ci/automation-scenarios",
+              "wokwi-ci/mcp-support"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Parts Reference",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "parts/diagram-format"
+            ]
+          },
+          {
+            "group": "Microcontroller Boards",
+            "pages": [
+              "parts/wokwi-arduino-uno",
+              "parts/wokwi-arduino-nano",
+              "parts/wokwi-arduino-mega",
+              "parts/wokwi-attiny85",
+              "parts/wokwi-pi-pico",
+              "parts/wokwi-franzininho",
+              "parts/board-franzininho-wifi",
+              "parts/board-st-nucleo-c031c6",
+              "parts/board-st-nucleo-l031k6",
+              "parts/board-stm32-bluepill"
+            ]
+          },
+          {
+            "group": "Displays",
+            "pages": [
+              "parts/wokwi-7segment",
+              "parts/wokwi-tm1637-7segment",
+              "parts/wokwi-lcd1602",
+              "parts/wokwi-lcd2004",
+              "parts/wokwi-ssd1306",
+              "parts/board-grove-oled-sh1107",
+              "parts/wokwi-ili9341",
+              "parts/wokwi-nokia-5110-screen",
+              "parts/wokwi-led-matrix",
+              "parts/wokwi-max7219-matrix",
+              "parts/wokwi-tv"
+            ]
+          },
+          {
+            "group": "LEDs",
+            "pages": [
+              "parts/wokwi-led",
+              "parts/wokwi-rgb-led",
+              "parts/wokwi-neopixel",
+              "parts/wokwi-led-strip",
+              "parts/wokwi-led-ring",
+              "parts/wokwi-led-bar-graph"
+            ]
+          },
+          {
+            "group": "Sensors",
+            "pages": [
+              "parts/wokwi-dht22",
+              "parts/wokwi-ds18b20",
+              "parts/wokwi-ntc-temperature-sensor",
+              "parts/wokwi-bmp180",
+              "parts/wokwi-mpu6050",
+              "parts/wokwi-hc-sr04",
+              "parts/wokwi-photoresistor-sensor",
+              "parts/wokwi-pir-motion-sensor",
+              "parts/wokwi-gas-sensor"
+            ]
+          },
+          {
+            "group": "Input Components",
+            "pages": [
+              "parts/wokwi-pushbutton",
+              "parts/wokwi-pushbutton-6mm",
+              "parts/wokwi-slide-switch",
+              "parts/wokwi-dip-switch-8",
+              "parts/wokwi-potentiometer",
+              "parts/wokwi-slide-potentiometer",
+              "parts/wokwi-analog-joystick",
+              "parts/wokwi-membrane-keypad",
+              "parts/wokwi-ky-040",
+              "parts/wokwi-ir-remote"
+            ]
+          },
+          {
+            "group": "Motors & Actuators",
+            "pages": [
+              "parts/wokwi-servo",
+              "parts/wokwi-stepper-motor",
+              "parts/wokwi-biaxial-stepper",
+              "parts/wokwi-a4988",
+              "parts/wokwi-buzzer"
+            ]
+          },
+          {
+            "group": "Modules & ICs",
+            "pages": [
+              "parts/wokwi-ds1307",
+              "parts/wokwi-relay-module",
+              "parts/wokwi-ks2e-m-dc5",
+              "parts/board-mfrc522",
+              "parts/wokwi-hx711",
+              "parts/wokwi-74hc165",
+              "parts/wokwi-74hc595",
+              "parts/wokwi-nlsf595",
+              "parts/wokwi-microsd-card",
+              "parts/wokwi-ir-receiver",
+              "parts/wokwi-clock-generator"
+            ]
+          },
+          {
+            "group": "Basic Components",
+            "pages": [
+              "parts/wokwi-resistor"
+            ]
+          },
+          {
+            "group": "Testing & Debug",
+            "pages": [
+              "parts/wokwi-logic-analyzer",
+              "parts/wokwi-text"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Chips API",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "chips-api/getting-started",
+              "chips-api/tutorial-7seg",
+              "chips-api/chip-json"
+            ]
+          },
+          {
+            "group": "API Reference",
+            "pages": [
+              "chips-api/gpio",
+              "chips-api/analog",
+              "chips-api/time",
+              "chips-api/uart",
+              "chips-api/i2c",
+              "chips-api/spi",
+              "chips-api/attributes",
+              "chips-api/framebuffer"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Online Arduino, ESP32, STM32, and Raspberry Pi Pico simulation",
+    "WiFi simulation with MQTT, HTTP, and NTP support",
+    "Virtual logic analyzer for debugging digital signals",
+    "Advanced GDB debugging support",
+    "Custom chip development with C/Rust/WebAssembly",
+    "VS Code extension for local development",
+    "CI/CD integration with GitHub Actions"
+  ],
+  "publicApiSurface": [
+    "diagram.json format",
+    "Chips API (GPIO, I2C, SPI, UART, Analog, Framebuffer)",
+    "Wokwi CLI commands (test, lint, validate)",
+    "VS Code extension configuration",
+    "Serial monitor configuration",
+    "Custom chip JSON format"
+  ]
+}
