@@ -1,0 +1,60 @@
+---
+title: SSD1306 OLED Display (Deprecated)
+description: Monochrome 128x64 OLED display with I2C interface
+---
+
+Monochrome 128x64 OLED display with I2C interface
+
+<Warning>
+This part has been deprecated. Please use [board-ssd1306](./board-ssd1306) instead.
+</Warning>
+
+## Pin names
+
+<ParamField path="DATA" type="pin">
+  I2C data line (SDA) - Arduino Uno pin A4
+</ParamField>
+
+<ParamField path="CLK" type="pin">
+  I2C clock line (SCL) - Arduino Uno pin A5
+</ParamField>
+
+<ParamField path="DC" type="pin">
+  Unused (for SPI mode, not supported)
+</ParamField>
+
+<ParamField path="RST" type="pin">
+  Unused (for SPI mode, not supported)
+</ParamField>
+
+<ParamField path="CS" type="pin">
+  Unused (for SPI mode, not supported)
+</ParamField>
+
+<ParamField path="3V3" type="pin">
+  3.3V regulated output
+</ParamField>
+
+<ParamField path="GND" type="pin">
+  Ground
+</ParamField>
+
+<ParamField path="VIN" type="pin">
+  Supply voltage
+</ParamField>
+
+<Note>
+DC, RST and CS are for SPI mode. The SSD1306 simulation only supports I2C mode, so these pins are not functional.
+</Note>
+
+The default I2C address of the SSD1306 module is 0x3c (60).
+
+## Attributes
+
+<ParamField path="i2cAddress" type="string" default="0x3c">
+  I2C address of the display
+</ParamField>
+
+## Simulator examples
+
+See [board-ssd1306](board-ssd1306#simulator-examples).

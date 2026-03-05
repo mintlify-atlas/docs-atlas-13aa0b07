@@ -1,0 +1,97 @@
+---
+title: LED Matrix
+description: WS2812 NeoPixel Compatible LED Matrix
+---
+
+WS2812 NeoPixel Compatible LED Matrix.
+
+## Pin names
+
+<ParamField path="DIN" type="pin">
+  Data input signal
+</ParamField>
+
+<ParamField path="VDD" type="pin">
+  Positive voltage supply
+</ParamField>
+
+<ParamField path="VSS" type="pin">
+  Ground
+</ParamField>
+
+<ParamField path="DOUT" type="pin">
+  Data output (for chaining to next panel)
+</ParamField>
+
+## Attributes
+
+<ParamField path="rows" type="string" default="8">
+  Number of rows
+</ParamField>
+
+<ParamField path="cols" type="string" default="8">
+  Number of columns
+</ParamField>
+
+<ParamField path="layout" type="string" default="">
+  Pixel wiring pattern: "" (progressive) or "serpentine"
+</ParamField>
+
+<ParamField path="brightness" type="string" default="1">
+  Brightness multiplier
+</ParamField>
+
+<ParamField path="pixelShape" type="string" default="">
+  Pixel rendering shape: "square", "circle", or "" (smooth)
+</ParamField>
+
+<ParamField path="pixelSize" type="string" default="5050">
+  LED package size: "5050", "3535", or "2020"
+</ParamField>
+
+### Layout
+
+The `layout` attribute controls how pixel indices map to physical positions in the matrix:
+
+- `""` (default) - Progressive: all rows go left-to-right
+- `"serpentine"` - Alternating row direction (left-to-right, then right-to-left)
+
+Most real-world WS2812 matrix panels use serpentine wiring.
+
+### Pixel rendering
+
+For pixel shape and size options, see [wokwi-led-strip: Pixel rendering](wokwi-led-strip#pixel-rendering).
+
+## Arduino code example
+
+```cpp
+#include <Adafruit_NeoPixel.h>
+
+#define MATRIX_PIN 2
+#define ROWS 8
+#define COLS 8
+#define NUM_PIXELS (ROWS * COLS)
+
+Adafruit_NeoPixel matrix(NUM_PIXELS, MATRIX_PIN, NEO_GRB + NEO_KHZ800);
+
+void setup() {
+  matrix.begin();
+  for (int i = 0; i < NUM_PIXELS; i++) {
+    matrix.setPixelColor(i, matrix.Color(0, 0, 150)); // Blue
+  }
+  matrix.show();
+}
+
+void loop() {
+  delay(10);
+}
+```
+
+## See also
+
+- [wokwi-led-ring](wokwi-led-ring) - WS2812 NeoPixel Compatible LED Ring
+- [wokwi-led-strip](wokwi-led-strip) - WS2812 NeoPixel Compatible LED Strip
+
+## Simulator examples
+
+- [NeoPixel Matrix Rainbow](https://wokwi.com/projects/456026145122415617)

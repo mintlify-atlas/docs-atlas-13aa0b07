@@ -1,0 +1,57 @@
+---
+title: Wokwi CLI Installation
+description: Install the CLI to run and automate Wokwi simulations from your terminal.
+---
+
+The CLI allows you to run Wokwi simulations from your terminal, and integrate them with your CI system. We recommend using the [Wokwi for VS Code](../vscode/getting-started) extension for local development, and the CLI for running your tests on CI.
+
+Both the CLI and the VS Code extension use the same project configuration files ([wokwi.toml](../vscode/project-config) and [diagram.json](../diagram-format)), so you can use the VS Code extension to create and test your project, and then use the CLI to run it on CI.
+
+## Installation
+
+<Tabs>
+  <Tab title="Linux/Mac">
+    To install the Wokwi CLI on Linux or macOS, run the following command:
+
+    ```bash
+    curl -L https://wokwi.com/ci/install.sh | sh
+    ```
+  </Tab>
+  <Tab title="Windows">
+    On Windows, you can use the following command in PowerShell:
+
+    ```powershell
+    iwr https://wokwi.com/ci/install.ps1 -useb | iex
+    ```
+  </Tab>
+  <Tab title="Manual Download">
+    Alternatively, you can download the CLI directly from the [GitHub Releases page](https://github.com/wokwi/wokwi-cli/releases/latest).
+
+    <Steps>
+      <Step title="Download the CLI">
+        Download the appropriate binary for your platform from the releases page.
+      </Step>
+      <Step title="Rename the file">
+        Rename the file to `wokwi-cli` (or `wokwi-cli.exe` on Windows).
+      </Step>
+      <Step title="Make it executable">
+        On Linux/Mac, make it executable: `chmod +x wokwi-cli`
+      </Step>
+      <Step title="Move to PATH">
+        Move it to a directory in your PATH (e.g. `/usr/local/bin` on Linux/Mac).
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## ESP-IDF Extension
+
+If your project is using the ESP-IDF toolchain, you can install an extension for ESP-IDF which will allow you to access it from `idf.py`. To install it, simply run the following command:
+
+```bash
+pip install idf-wokwi
+```
+
+<Tip>
+Read more about `idf-wokwi` on our [ESP-IDF simulation extension](./idf-usage) page.
+</Tip>

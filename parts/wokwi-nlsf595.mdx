@@ -1,0 +1,58 @@
+---
+title: NLSF595 LED Driver
+description: Serial (SPI) Tri-Color LED Driver for controlling RGB LEDs
+---
+
+Serial (SPI) Tri-Color LED Driver.
+
+Use the NLSF595 shift register to connect power-hungry RGB LEDs to your microcontroller. A single unit can control two RGB LEDs, and a chain of two units can control up to five RGB LEDs.
+
+## Pins
+
+<ParamField path="SI" type="input">
+  Serial input
+</ParamField>
+
+<ParamField path="SCK" type="clock">
+  Serial clock
+</ParamField>
+
+<ParamField path="RCK" type="control">
+  Storage (latch) pin
+</ParamField>
+
+<ParamField path="OE" type="control">
+  Output enable, active low. Connect to GND if not used.
+</ParamField>
+
+<ParamField path="QA…QH" type="output">
+  Parallel output
+</ParamField>
+
+<ParamField path="SQH" type="output">
+  Serial output - Use to chain multiple NLSF595 units together. Connect SQH to the SI pin of the next NLSF595 chip in chain.
+</ParamField>
+
+<ParamField path="SCLR" type="control">
+  Reset (clear), active low. Connect to VCC if not used
+</ParamField>
+
+<ParamField path="GND" type="ground">
+  Ground
+</ParamField>
+
+<ParamField path="VCC" type="power">
+  Supply voltage
+</ParamField>
+
+## Using the NLSF595
+
+You will need to connect at least 3 pins to your microcontroller: SI, SCK, and RCK.
+
+The OE pin can be used to disable the output of the shift register. If you need that functionality, connect it to your microcontroller. Otherwise, connect it to the ground to permanently enable the output.
+
+The output pins of the shift register, QA through QH, are usually connected to the input pins of common-anode [RGB LEDs](/parts/wokwi-rgb-led).
+
+## Simulator examples
+
+- [NLSF595 LED Driver with 2 RGB LEDs](https://wokwi.com/projects/315085666329297472)

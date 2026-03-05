@@ -1,0 +1,73 @@
+---
+title: Model Context Protocol (MCP) Support
+description: Integrate AI agents like Copilot, Claude, Cursor, Gemini, and ChatGPT with Wokwi using the Model Context Protocol (MCP). This guide covers configuring the Wokwi MCP server, enabling real-time simulation, automated testing, and virtual hardware interaction.
+---
+
+The Model Context Protocol (MCP) is an open standard that allows AI agents—such as Copilot, Claude Code, Cursor, Gemini, ChatGPT and others—to securely interact with external tools and services. For Wokwi users, MCP enables seamless integration between AI assistants and embedded simulation.
+
+## Wokwi MCP Server
+
+The Wokwi CLI includes an experimental MCP server that allows AI agents to interact with Wokwi's simulation and testing capabilities. This enables AI agents to:
+
+<CardGroup cols={2}>
+  <Card title="Simulate Complex Systems" icon="microchip">
+    Run simulations of embedded systems with multiple components
+  </Card>
+  
+  <Card title="Run Automated Tests" icon="vial">
+    Execute automated tests on embedded projects
+  </Card>
+  
+  <Card title="Monitor Serial Output" icon="terminal">
+    Monitor the serial console output and logs in real-time
+  </Card>
+  
+  <Card title="Interact with Hardware" icon="hand-pointer">
+    Interact with virtual hardware components during simulation
+  </Card>
+</CardGroup>
+
+## Configuration
+
+To configure your AI agent to use the Wokwi MCP server, add the following to your agent's MCP configuration:
+
+```json
+{
+  "servers": {
+    "Wokwi": {
+      "type": "stdio",
+      "command": "wokwi-cli",
+      "args": ["mcp"],
+      "env": {
+        "WOKWI_CLI_TOKEN": "${input:wokwi-cli-token}"
+      }
+    }
+  }
+}
+```
+
+### Authentication
+
+You will need a valid Wokwi CLI token to use the MCP server. You can generate a token in the [Wokwi CI Dashboard](https://wokwi.com/dashboard/ci).
+
+<Steps>
+  <Step title="Generate Token">
+    Navigate to the [Wokwi CI Dashboard](https://wokwi.com/dashboard/ci) and create a new API token.
+  </Step>
+  
+  <Step title="Configure Environment">
+    Set the `WOKWI_CLI_TOKEN` environment variable to the token value in your MCP configuration.
+  </Step>
+  
+  <Step title="Test Connection">
+    Verify the connection by running a simple simulation command through your AI agent.
+  </Step>
+</Steps>
+
+<Warning>
+The MCP server is currently experimental and the API may change in future versions. Please report any issues or feedback to the Wokwi team.
+</Warning>
+
+<Tip>
+For more information about the Model Context Protocol, visit the [MCP documentation](https://modelcontextprotocol.io/).
+</Tip>

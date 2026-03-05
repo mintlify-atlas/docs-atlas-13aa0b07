@@ -1,0 +1,103 @@
+---
+title: ILI9341 TFT Display
+description: Full color 240x320 2.8" LCD-TFT display with SPI interface
+---
+
+Full color 240x320 2.8" LCD-TFT display with SPI interface
+
+## Pin names
+
+<ParamField path="VCC" type="pin">
+  Supply voltage
+</ParamField>
+
+<ParamField path="GND" type="pin">
+  Ground
+</ParamField>
+
+<ParamField path="CS" type="pin">
+  Chip select
+</ParamField>
+
+<ParamField path="RST" type="pin">
+  Reset (not available in simulation)
+</ParamField>
+
+<ParamField path="D/C" type="pin">
+  Data/command pin
+</ParamField>
+
+<ParamField path="MOSI" type="pin">
+  SPI data (MCU → LCD)
+</ParamField>
+
+<ParamField path="SCK" type="pin">
+  SPI clock
+</ParamField>
+
+<ParamField path="LED" type="pin">
+  Backlight LED (not available in simulation)
+</ParamField>
+
+<ParamField path="MISO" type="pin">
+  SPI data (LCD → MCU) - optional unless reading data back from LCD
+</ParamField>
+
+<Note>
+The RST and backlight (LED) pins are not available in the simulation. You can leave MISO disconnected, unless you need to read data back from the LCD.
+</Note>
+
+## Attributes
+
+<ParamField path="flipHorizontal" type="string" default="">
+  Set to "1" to flip the display horizontally
+</ParamField>
+
+<ParamField path="flipVertical" type="string" default="">
+  Set to "1" to flip the display vertically
+</ParamField>
+
+<ParamField path="swapXY" type="string" default="">
+  Set to "1" to change the orientation of the display (some LCD panels have the X/Y axes swapped)
+</ParamField>
+
+## Using in Arduino
+
+You can use the _Adafruit_ILI9341_ library or the _lcdgfx_ library to interface with the LCD display. The following code example shows basic usage with _Adafruit_ILI9341_:
+
+```cpp
+#include "SPI.h"
+#include "Adafruit_GFX.h"
+#include "Adafruit_ILI9341.h"
+
+#define TFT_DC 9
+#define TFT_CS 10
+Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
+
+void setup() {
+  tft.begin();
+
+  tft.setCursor(26, 120);
+  tft.setTextColor(ILI9341_RED);
+  tft.setTextSize(3);
+  tft.println("Hello, TFT!");
+
+  tft.setCursor(20, 160);
+  tft.setTextColor(ILI9341_GREEN);
+  tft.setTextSize(2);
+  tft.println("I can has colors?");
+}
+
+void loop() { }
+```
+
+[Run this example on Wokwi](https://wokwi.com/projects/308024602434470466)
+
+## Simulator examples
+
+- [Adafruit ILI9341 GFX Example](https://wokwi.com/projects/307567201804616256)
+- [Fingerprint Pattern](https://wokwi.com/projects/307567963154678338)
+- [Mandelbrot Set](https://wokwi.com/projects/307567275170333248)
+- [Neon Ribbons](https://wokwi.com/projects/456010270409184257)
+- [Wokwi Logo over Plamsa](https://wokwi.com/projects/307664460274729536)
+- [Lode Runner with lcdgfx](https://wokwi.com/projects/308022099088245312)

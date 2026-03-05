@@ -1,0 +1,53 @@
+---
+title: Relay Module
+description: Electrically operated switch with normally open and normally closed contacts
+---
+
+Electrically operated switch.
+
+## Pins
+
+<ParamField path="VCC" type="power">
+  Supply voltage
+</ParamField>
+
+<ParamField path="GND" type="ground">
+  Ground
+</ParamField>
+
+<ParamField path="IN" type="input">
+  Control signal (e.g. from micro-controller)
+</ParamField>
+
+<ParamField path="NC" type="contact">
+  Normally closed
+</ParamField>
+
+<ParamField path="COM" type="contact">
+  Common pin
+</ParamField>
+
+<ParamField path="NO" type="contact">
+  Normally open
+</ParamField>
+
+## Attributes
+
+<ParamField path="transistor" type="string" default="npn">
+  "npn" (active-high) or "pnp" (active-low)
+</ParamField>
+
+## Operation
+
+The relay is an electronic switch.
+
+When the `IN` pin is high / disconnected, `COM` is connected to `NC` (NC means normally closed).
+
+When the `IN` pin is low, `COM` is connected to `NO` (NO means normally open).
+
+Setting the "transistor" attribute to "pnp" inverts the logic: when `IN` is high, `COM` is connected to `NO`, and when `IN` is low / disconnected, `COM` is connected to `NC`.
+
+## Simulator Examples
+
+- [One relay module controlling two LEDs](https://wokwi.com/projects/347308007359513172)
+- [Arduino Uno controlling four relay modules](https://wokwi.com/projects/398166790321189889)

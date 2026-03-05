@@ -1,0 +1,77 @@
+---
+title: ESP-IDF Simulation Extension Usage
+description: idf-wokwi CLI command reference for ESP-IDF projects.
+---
+
+The `idf-wokwi` Python package adds simulation support directly to Espressif's `idf.py` command. From `idf.py`, you can run a simulation and pass a selection of options to customize its behavior.
+
+Unlike `wokwi-cli`, you don't need to initialize a project as `idf-wokwi` will implicitly generate the relevant files (`wokwi.toml`/`diagram.json`) by inferring information from ESP-IDF. You can however still add your own files if you require other components.
+
+## Getting Started
+
+<Steps>
+  <Step title="Create an API Token">
+    Create an API token on the [Wokwi CI Dashboard](https://wokwi.com/dashboard/ci). Set the `WOKWI_CLI_TOKEN` environment variable to the token value.
+  </Step>
+  
+  <Step title="Install the Extension">
+    Install the extension with the following command:
+    
+    ```bash
+    pip install idf-wokwi
+    ```
+  </Step>
+  
+  <Step title="Run a Simulation">
+    You can now run a simulation by executing:
+    
+    ```bash
+    idf.py wokwi
+    ```
+  </Step>
+</Steps>
+
+## CLI Options
+
+Pass any selection of the following commands to `idf.py wokwi` to customize its behavior during runtime.
+
+<ParamField path="--diagram-file" type="string">
+  Path to `diagram.json` (defaults to project root)
+</ParamField>
+
+<ParamField path="--timeout" type="number">
+  Simulation timeout in milliseconds (exit code 42 on timeout)
+</ParamField>
+
+<ParamField path="--expect-text" type="string">
+  Exit successfully when this text appears in serial output
+</ParamField>
+
+<ParamField path="--fail-text" type="string">
+  Exit with error when this text appears in serial output
+</ParamField>
+
+<ParamField path="--expect-regex" type="string">
+  Exit successfully when this regex matches a serial output line
+</ParamField>
+
+<ParamField path="--fail-regex" type="string">
+  Exit with error when this regex matches a serial output line
+</ParamField>
+
+## Example Usage
+
+```bash
+export WOKWI_CI_TOKEN="your-token-here"
+
+# Build and simulate
+idf.py build
+idf.py wokwi
+
+# CI mode: exit when expected text appears
+idf.py wokwi --timeout 10000 --expect-text "Hello world!"
+```
+
+<Tip>
+The `idf-wokwi` extension automatically detects your ESP-IDF project configuration and generates the necessary Wokwi files, making it easy to get started with CI testing.
+</Tip>

@@ -1,0 +1,142 @@
+---
+title: Getting Started with Wokwi for VS Code
+description: Simulate embedded and IoT projects directly inside Visual Studio Code using the Wokwi extension. Supports PlatformIO, ESP-IDF, Arduino, MicroPython, Rust, Zephyr and more.
+---
+
+Wokwi for Visual Studio Code provides a simulation solution for embedded and IoT system engineers. The extension integrates with your existing development environment, allowing you to simulate your projects directly from your code editor.
+
+You can use Wokwi for VS Code with Zephyr Project, PlatformIO, ESP-IDF, Pi Pico SDK, NuttX, Rust, Arduino CLI, MicroPython, and other embedded development frameworks and toolchains.
+
+<video src="https://wokwi.github.io/video-assets/vscode/wokwi-vscode-1s.mp4" autoPlay muted loop style={{width:'100%'}}></video>
+
+<Note>
+Wokwi for VS Code running an ESP-IDF project
+</Note>
+
+## Installation
+
+<Steps>
+  <Step title="Install the Extension">
+    Install the [Wokwi for VS Code](https://marketplace.visualstudio.com/items?itemName=wokwi.wokwi-vscode) extension from the Visual Studio Code Marketplace.
+  </Step>
+  
+  <Step title="Request a License">
+    Press `F1` and select "Wokwi: Request a new License". VS Code will ask you to confirm opening the Wokwi website in your browser. Confirm by clicking "Open".
+  </Step>
+  
+  <Step title="Get Your License">
+    Click on the button that says "GET YOUR LICENSE". You may be asked to sign in to your Wokwi account. If you don't have an account, you can create one for free.
+  </Step>
+  
+  <Step title="Activate the License">
+    The browser will ask for confirmation to send the license to VS Code. Confirm (you may have to confirm twice, once in the browser, and once in VS Code). You'll see a message in VS Code that says "License activated for [your name]". Congratulations!
+  </Step>
+</Steps>
+
+## Example Projects
+
+To configure Wokwi for your own project, see the [Project Configuration](/vscode/project-config) page.
+
+If you just want to get started quickly and play around with Wokwi for VS Code, here are some example projects, preconfigured with [diagram.json](/parts/diagram-format) and [wokwi.toml](/vscode/project-config) files.
+
+<Note>
+Before simulating any of the following projects, you need to compile the code and generate the firmware / ELF file. Consult the project's README file for instructions on how to compile the code.
+</Note>
+
+### PlatformIO Examples
+
+<CardGroup cols={2}>
+  <Card title="Arduino Simon Game" icon="gamepad" href="https://github.com/wokwi/arduino-simon-game">
+    Memory game with 4 LEDs, 4 buttons, a buzzer, and a 7-segment display
+  </Card>
+  
+  <Card title="ESP32 Network Clock" icon="clock" href="https://github.com/wokwi/esp32-ntp-clock">
+    Syncs time from the internet (NTP) and displays it on an LCD display
+  </Card>
+  
+  <Card title="ESP32 Web Server" icon="server" href="https://github.com/wokwi/esp32-http-server">
+    HTTP server that controls 2 LEDs
+  </Card>
+  
+  <Card title="ESP32 Async Web Server" icon="bolt" href="https://github.com/wokwi/esp32-async-web-server-example">
+    HTTP server that controls 2 LEDs, using the ESPAsyncWebServer library
+  </Card>
+</CardGroup>
+
+### ESP-IDF Examples
+
+<CardGroup cols={2}>
+  <Card title="WiFi + FreeRTOS Tasks" icon="wifi" href="https://github.com/wokwi/esp32-idf-hello-wifi">
+    Example project demonstrating WiFi connectivity with FreeRTOS
+  </Card>
+  
+  <Card title="SSD1306 OLED with LVGL Graphics" icon="display" href="https://github.com/wokwi/esp-idf-oled-ssd1306">
+    Graphics demo using SSD1306 OLED display and LVGL library
+  </Card>
+</CardGroup>
+
+### STM32 Examples
+
+<CardGroup cols={2}>
+  <Card title="STM32 Nucleo64 C031C6" icon="microchip" href="https://github.com/wokwi/stm32-hello-wokwi">
+    STM32 Nucleo64 C031C6 with STM32 HAL
+  </Card>
+  
+  <Card title="CMSIS on STM32C031C6" icon="code" href="https://github.com/WelsTheory/stm32_hello_cmsis_wokwi">
+    CMSIS example for STM32C031C6
+  </Card>
+  
+  <Card title="FreeRTOS on STM32C0" icon="list" href="https://github.com/KhalilOuali/FreeRTOS-STM32-VSCode-Wokwi">
+    FreeRTOS running on STM32C0 microcontroller
+  </Card>
+</CardGroup>
+
+### ESP32 + Rust
+
+<CardGroup cols={2}>
+  <Card title="Hello Display" icon="display" href="https://github.com/playfulFence/esp-hello-display/tree/feature/vscode-wokwi">
+    Using ESP32-C3 and ILI9341 Display
+  </Card>
+  
+  <Card title="esp-gallery" icon="palette" href="https://github.com/playfulFence/esp-gallery">
+    Interactive art gallery (ESP32-C3)
+  </Card>
+  
+  <Card title="ESP32-S2 Keypad Example" icon="keyboard" href="https://github.com/playfulFence/esp-keypad-example/tree/feature/vscode-wokwi">
+    Keypad input example for ESP32-S2
+  </Card>
+  
+  <Card title="Scrolling Text" icon="text" href="https://github.com/playfulFence/esp-rolling-stone">
+    Using LED Dot Matrix Display
+  </Card>
+  
+  <Card title="Etch-A-Sketch" icon="pencil" href="https://github.com/playfulFence/esp-etch-a-sketch">
+    Draw on an LED Dot Matrix using an analog joystick
+  </Card>
+</CardGroup>
+
+### MicroPython
+
+Check out the [MicroPython on Wokwi for VS Code repo](https://github.com/wokwi/wokwi-vscode-micropython) for examples and instructions.
+
+See also the [MicroPython in VS Code](/vscode/micropython) page for more details.
+
+### Other Examples
+
+<CardGroup cols={2}>
+  <Card title="Arduino LCD-1602 Hello World" icon="display" href="https://github.com/wokwi/arduino-lcd-helloworld">
+    Using Arduino Extension
+  </Card>
+  
+  <Card title="Custom Chips Example" icon="chip" href="https://github.com/wokwi/inverter-chip">
+    A [custom chip](/chips-api/getting-started) that inverts the input signal
+  </Card>
+  
+  <Card title="Raspberry Pi Pico SDK" icon="raspberry-pi" href="https://github.com/wokwi/pico-sdk-blink">
+    Blinky for Raspberry Pi Pico
+  </Card>
+  
+  <Card title="Sming Framework" icon="code" href="https://sming.readthedocs.io/en/latest/experimental/wokwi.html">
+    Using Wokwi with the Sming Framework
+  </Card>
+</CardGroup>

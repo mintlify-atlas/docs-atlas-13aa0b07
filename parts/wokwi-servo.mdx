@@ -1,0 +1,62 @@
+---
+title: Servo Motor
+description: Standard Micro Servo Motor with 0-180 degree range of motion
+---
+
+A standard Micro Servo Motor.
+
+## Range of motion
+
+The servo is able to sweep from 0 degrees to 180 degrees, with hard stops at both ends.
+
+| Position | Degrees |
+| :------- | :------ |
+| Default  | 0       |
+| Center   | 90      |
+| Maximum  | 180     |
+
+## Pins
+
+<ParamField path="PWM" type="signal">
+  Servo control signal
+</ParamField>
+
+<ParamField path="V+" type="power">
+  Positive voltage (5V)
+</ParamField>
+
+<ParamField path="GND" type="ground">
+  Ground
+</ParamField>
+
+## Attributes
+
+<ParamField path="horn" type="string" default="single">
+  Horn type: "single", "double" or "cross"
+</ParamField>
+
+<ParamField path="hornColor" type="string" default="#ccc">
+  The color of the servo's horn
+</ParamField>
+
+### Examples
+
+| Result       | Attrs                        |
+| ------------ | ---------------------------- |
+| Single horn  | `{ "horn": "single" }`       |
+| Custom color | `{ "hornColor": "#000088" }` |
+| Double horn  | `{ "horn": "double" }`       |
+| Cross horn   | `{ "horn": "cross" }`        |
+
+## Simulator examples
+
+- [Sweep](https://wokwi.com/projects/344891730528567891)
+- [ESP32 Servo Sweep](https://wokwi.com/projects/323706614646309460)
+- [Knob](https://wokwi.com/projects/344892191015961170)
+- [Arduino Nano controlling 1 servo with two pushbuttons](https://wokwi.com/projects/328312829780165204)
+- [Arduino Uno controlling 5 servos](https://wokwi.com/projects/305087394119418434)
+- [Arduino Mega animating 32 servos](https://wokwi.com/projects/305336312628511297)
+
+## Tutorials
+
+- [Exploring servo motors using the Wokwi Logic Analyzer](https://blog.wokwi.com/learn-servo-motor-using-wokwi-logic-analyzer)

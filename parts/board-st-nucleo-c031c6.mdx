@@ -1,0 +1,57 @@
+---
+title: board-st-nucleo-c031c6
+description: STM32 Nucleo-64 C031C6 board reference - ARM Cortex-M0+ with 32KB Flash and 12KB RAM
+---
+
+A Nucleo-64 development board with STM32C031C6 MCU: ARM Cortex-M0+ processor, 32 KB Flash, 12 KB RAM running at 48 MHz.
+
+### Onboard LED
+
+The Nucleo-C031C6 has an onboard user LED (LD4), attached to GPIO pin PA5 (D13). The LED is lit when the pin is driven high.
+
+You can also use the `LED_BUILTIN` constant to reference the LED in your Arduino code:
+
+```cpp
+pinMode(LED_BUILTIN, OUTPUT);
+digitalWrite(LED_BUILTIN, HIGH);
+```
+
+See [Blink](https://wokwi.com/projects/365916265388374017) for a complete code example.
+
+## Simulation features
+
+This table summarizes the current status of the STM32C031C6 MCU simulation features:
+
+| Feature        | Status | Notes                                           |
+| -------------- | ------ | ----------------------------------------------- |
+| Processor core | ✔️     | Cortex M0+ core                                 |
+| SysTick timer  | ✔️     |                                                 |
+| GPIO           | ✔️     |                                                 |
+| USART          | ✔️     |                                                 |
+| I2C            | ✔️     | Master mode only                                |
+| SPI            | ✔️     | Master mode only                                |
+| ADC            | ✔️     | Used by analogRead()                            |
+| STM32 timers   | ✔️     | TIM1/3/14/16/17, used by analogWrite()          |
+| CRC            | ✔️     | 32, 16, and 8 bits (7 bits not supported)       |
+| DBG            | ❌     |                                                 |
+| DMA            | ❌     |                                                 |
+| EXTI           | ✔️     |                                                 |
+| IWDG           | ❌     |                                                 |
+| PWR            | ❌     |                                                 |
+| RCC            | 🟡     |                                                 |
+| RTC            | ❌     |                                                 |
+| SYSCFG         | ❌     |                                                 |
+| WWDG           | 🟡     | Implemented, not tested yet                     |
+| GDB Debugging  | ✔️     | See the [GDB Debugging guide](../gdb-debugging) |
+
+Legend:  
+✔️ Simulated  
+🟡 Partial implementation/work in progress  
+❌ Not implemented
+
+## Simulator examples
+
+- [Nucleo-C031C6 STM32 HAL Example](https://wokwi.com/projects/365551778332549121)
+- [Nucleo-C031C6 and I2C LCD1602](https://wokwi.com/projects/365421666018061313)
+- [Nucleo-C031C6 and ILI9341 SPI LCD Display](https://wokwi.com/projects/365549388158011393)
+- [GPIO Interrupts on Nucleo-C031C6](https://wokwi.com/projects/367083026043051009)

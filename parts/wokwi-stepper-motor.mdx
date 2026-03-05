@@ -1,0 +1,69 @@
+---
+title: Stepper Motor
+description: Bipolar stepper motor with configurable size and gear ratio
+---
+
+A bipolar stepper motor.
+
+## Pins
+
+<ParamField path="A-" type="signal">
+  Coil A negative signal
+</ParamField>
+
+<ParamField path="A+" type="signal">
+  Coil A positive signal
+</ParamField>
+
+<ParamField path="B+" type="signal">
+  Coil B positive signal
+</ParamField>
+
+<ParamField path="B-" type="signal">
+  Coil B negative signal
+</ParamField>
+
+## Attributes
+
+<ParamField path="arrow" type="string" default="">
+  Displays an arrow to indicate the position of the stepper. Set to the color of the arrow, e.g. "orange"
+</ParamField>
+
+<ParamField path="display" type="string" default="steps">
+  What number to display on the stepper? Valid values "steps", "angle" (in degrees), "none"
+</ParamField>
+
+<ParamField path="gearRatio" type="string" default="1:1">
+  The gear ratio of the motor. set to "1:1" for 200 steps/revolution, "2:1" for 400 steps/revolution, etc.
+</ParamField>
+
+<ParamField path="size" type="string" default="23">
+  The NEMA standard size of the motor. Valid values: "8", "11", "14", "17", "23", "34"
+</ParamField>
+
+### Examples
+
+| Result         | Attrs                    |
+| -------------- | ------------------------ |
+| NEMA 17 size   | `{ "size": "17" }`       |
+| Display steps  | `{ "display": "steps" }` |
+| Display angle  | `{ "display": "angle" }` |
+| Display none   | `{ "display": "none" }`  |
+| Orange arrow   | `{ "arrow": "orange" }`  |
+
+## Using the stepper motor
+
+When using a stepper motor you need a driver chip that can supply large amounts of current to the motor's coils. Wokwi supports the common [A4988 driver board](/parts/wokwi-a4988). You can also wire the stepper motor directly to your microcontroller. Wokwi uses a digital simulation engine, so the coil current is not taken into account.
+
+You can use a variety of Arduino libraries to control the stepper motor: Stepper, AccelStepper, etc.
+
+### Simulation Behavior
+
+The stepper motor moves 1.8 degrees per step (200 steps per revolution). The motor also supports half-stepping (0.9 degrees per step / 400 steps per revolution). You can even use smaller microsteps (e.g. 1/4 or 1/8 step), but the simulated motor only displays the angle in half-step resolution. For more information, check out the [A4988 microstepping configuration table](/parts/wokwi-a4988#microstepping-configuration).
+
+## Simulator examples
+
+- [Stepper motor using the Arduino Stepper library](https://wokwi.com/projects/327324886912467538)
+- [Direct control of the motor (no library)](https://wokwi.com/projects/327360139702043220)
+- [Advanced control with the AccelStepper library and potentiometer](https://wokwi.com/projects/327381547863769683)
+- [Manually control the stepper motor using switches and relays](https://wokwi.com/projects/327424914940232274)

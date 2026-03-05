@@ -1,0 +1,46 @@
+---
+title: Nokia 5110 Screen
+description: Graphic LCD screen with 84x48 pixel monochrome display
+---
+
+The Nokia 5110 is a basic graphic LCD screen for lots of applications. The monochrome display has an 84 x 48 pixel resolution.
+
+## Pin names
+
+<ParamField path="RST" type="pin">
+  Reset pin
+</ParamField>
+
+<ParamField path="CE" type="pin">
+  Chip enable
+</ParamField>
+
+<ParamField path="DC" type="pin">
+  Data/Command select
+</ParamField>
+
+<ParamField path="DIN" type="pin">
+  Serial data input
+</ParamField>
+
+<ParamField path="CLK" type="pin">
+  Serial clock input
+</ParamField>
+
+<ParamField path="VCC" type="pin">
+  Supply voltage
+</ParamField>
+
+<ParamField path="BL" type="pin">
+  Backlight control
+</ParamField>
+
+<ParamField path="GND" type="pin">
+  Ground
+</ParamField>
+
+## Simulator examples
+
+The example below uses the Adafruit PCD8544 library to control the display. The library provides a simple interface for drawing text, shapes and bitmaps on the screen:
+
+- [Nokia 5110 example: Hello World](https://wokwi.com/projects/422590948073922561)

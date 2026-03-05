@@ -1,0 +1,82 @@
+---
+title: Biaxial Stepper Motor
+description: Concentric biaxial stepper motor containing two stepper motors in a single enclosure
+---
+
+A concentric biaxial stepper motor, containing two stepper motors packaged in a single enclosure.
+
+## Pins
+
+<ParamField path="A1-" type="signal">
+  Outer shaft motor's coil A negative signal
+</ParamField>
+
+<ParamField path="A1+" type="signal">
+  Outer shaft motor's coil A positive signal
+</ParamField>
+
+<ParamField path="B1+" type="signal">
+  Outer shaft motor's coil B positive signal
+</ParamField>
+
+<ParamField path="B1-" type="signal">
+  Outer shaft motor's coil B negative signal
+</ParamField>
+
+<ParamField path="A2-" type="signal">
+  Inner shaft motor's coil A negative signal
+</ParamField>
+
+<ParamField path="A2+" type="signal">
+  Inner shaft motor's coil A positive signal
+</ParamField>
+
+<ParamField path="B2+" type="signal">
+  Inner shaft motor's coil B positive signal
+</ParamField>
+
+<ParamField path="B2-" type="signal">
+  Inner shaft motor's coil B negative signal
+</ParamField>
+
+## Attributes
+
+<ParamField path="outerHandLength" type="string" default="30">
+  The length of the outer shaft's hand, between "20" and "70"
+</ParamField>
+
+<ParamField path="outerHandColor" type="string" default="gold">
+  The color of the outer shaft's hand
+</ParamField>
+
+<ParamField path="outerHandShape" type="string" default="plain">
+  The shape of the outer shaft's hand: "plain", "arrow", or "ornate"
+</ParamField>
+
+<ParamField path="innerHandLength" type="string" default="30">
+  The length of the inner shaft's hand, between "20" and "70"
+</ParamField>
+
+<ParamField path="innerHandColor" type="string" default="silver">
+  The color of the inner shaft's hand
+</ParamField>
+
+<ParamField path="innerHandShape" type="string" default="plain">
+  The shape of the inner shaft's hand: "plain", "arrow", or "ornate"
+</ParamField>
+
+### Examples
+
+| Result                   | Attrs                                                                                 |
+| ------------------------ | ------------------------------------------------------------------------------------- |
+| Arrow inner hand         | `{ "innerHandLength": "40", "innerHandShape": "arrow" }`                              |
+| Ornate hands with colors | `{ "innerHandColor": "red", "innerHandShape": "ornate", "outerHandShape": "ornate" }` |
+
+## Using the biaxial stepper motor
+
+The biaxial stepper motor is made of two individual stepper motors. Check out the [wokwi-stepper-motor](/parts/wokwi-stepper-motor#using-the-stepper-motor) and [wokwi-a4988](/parts/wokwi-a4988) documentation for more information about using stepper motors and their simulation behavior.
+
+## Simulator examples
+
+- [Arduino Uno driving a Biaxial Stepper Motor](https://wokwi.com/projects/344254821712265811)
+- [Biaxial Motor with two A4988 drivers](https://wokwi.com/projects/345206751024382546)

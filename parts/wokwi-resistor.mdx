@@ -1,0 +1,40 @@
+---
+title: Resistor
+description: Basic resistor component with configurable resistance value
+---
+
+A resistor.
+
+<Warning>
+Wokwi only has a very basic analog circuit simulation. You won't be able to use resistors together with analog components (e.g. potentiometer or NTC temperature sensor). You can still use the resistors as external pull-up/pull-down resistors.
+</Warning>
+
+## Pins
+
+<ParamField path="1" type="passive">
+  First pin
+</ParamField>
+
+<ParamField path="2" type="passive">
+  Second pin
+</ParamField>
+
+## Attributes
+
+<ParamField path="value" type="string" default="1000">
+  Resistance, in ohms
+</ParamField>
+
+### Examples
+
+| Result   | Attrs                     |
+| -------- | ------------------------- |
+| 1Ω       | `{ "value": "1" }`        |
+| 220Ω     | `{ "value": "220" }`      |
+| 10MΩ     | `{ "value": "10000000" }` |
+
+Check out the [resistor showcase by Koepel](https://wokwi.com/projects/300936732038136328) for more examples.
+
+## Simulator examples
+
+- [External pull-down resistor](https://wokwi.com/projects/302214836102627848) - How to use a resistor as a pull-down for a button

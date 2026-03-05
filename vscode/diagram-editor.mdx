@@ -1,0 +1,38 @@
+---
+title: Diagram Editor in VS Code
+description: Use the visual diagram editor in Wokwi for VS Code to open and edit diagrams, and run the simulation.
+---
+
+The visual diagram editor in Wokwi for VS Code allows you to edit the diagram of your simulation project. It is available in the [Hobby+ and Pro plans](https://wokwi.com/pricing).
+
+## Opening the Diagram Editor
+
+To open the diagram editor, click on a `diagram.json` file in the Explorer view. The diagram will open in a new tab. 
+
+The diagram editor also works for files matching the `diagram.*.json` pattern, such as `diagram.esp32.json`. This is useful if you have multiple target boards in your project, and want to maintain a diagram for each target board.
+
+<Note>
+If you are using the Community or the Hobby plan, you will be able to view the diagram, but not edit it in the diagram editor. You can still edit the diagram.json file in the text editor.
+</Note>
+
+## Editing the Diagram as Text
+
+Some advanced features are only available if you modify the diagram in the text editor. You can open the text editor by:
+
+<Steps>
+  <Step title="Right-click the diagram.json tab">
+    Right-click on the diagram.json tab in VS Code
+  </Step>
+  
+  <Step title="Select 'Reopen Editor With...'">
+    Select "Reopen Editor With..." from the context menu
+  </Step>
+  
+  <Step title="Choose 'Text Editor'">
+    Select "Text Editor" from the list of available editors
+  </Step>
+</Steps>
+
+## Running the Simulation
+
+You can run the simulation by pressing the green play button in the top left corner of the editor. Wokwi will open a new tab and start the simulation.

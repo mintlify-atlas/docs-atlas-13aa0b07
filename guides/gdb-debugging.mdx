@@ -1,0 +1,63 @@
+---
+title: GDB Debugging (Advanced)
+description: Use GDB to debug Arduino and Raspberry Pi Pico code directly in the Wokwi simulator. Launch web-based GDB sessions, step through code, set breakpoints and inspect variables.
+---
+
+GDB is a powerful source code debugger. You can use it to debug your Arduino and Raspberry Pi Pico code in Wokwi.
+
+## Running GDB in Wokwi
+
+<Steps>
+  <Step title="Open the command palette">
+    Go into the code editor and press **F1**.
+  </Step>
+  <Step title="Select GDB option">
+    In the prompt that opens, type "GDB", and select **"Start Web GDB Session (debug build)"**.
+  </Step>
+  <Step title="Wait for GDB to load">
+    A new browser tab will open with the GDB prompt. If this is the first time you are using this feature, it may take up to 30 seconds for GDB to fully load.
+  </Step>
+</Steps>
+
+## Debugging Session Example
+
+When GDB is ready, you'll get the following prompt:
+
+```
+0x00000000 in __vectors ()
+(gdb)
+```
+
+At this point you can type GDB commands. For instance, suppose you want to run your program line-by-line, starting from `setup()`. First, type `tbreak setup` and `c` to start the program and run it until the beginning of `setup()`:
+
+```
+(gdb) tbreak setup
+Temporary breakpoint 1 at 0x2ca: file sketch.ino, line 28.
+(gdb) c
+Continuing.
+
+Temporary breakpoint 1, setup () at sketch.ino:28
+28        pinMode(LED_BUILTIN, OUTPUT);
+(gdb)
+```
+
+At this point, type `layout src` to show the source code of your program, and type `next` to execute the next line of source code. You can then type `next` repeatedly to go over the code line by line.
+
+<Tip>
+If you want to print the value of some variable, use the `print` command. For example, if you have a variable called `ledIndex`, type `print ledIndex` to print the value of that variable.
+</Tip>
+
+## Learn more
+
+<CardGroup cols={2}>
+  <Card title="AVR GDB Cheatsheet" icon="book" href="https://blog.wokwi.com/gdb-avr-arduino-cheatsheet/">
+    See many examples of useful GDB commands and features
+  </Card>
+  <Card title="Running GDB in the Browser" icon="laptop" href="https://blog.wokwi.com/running-gdb-in-the-browser/">
+    Learn how GDB works in the browser (optional technical deep dive)
+  </Card>
+</CardGroup>
+
+<Note>
+It takes time to learn about all the different GDB features and to use them efficiently, but it can get very powerful even with just a few basic commands.
+</Note>

@@ -1,0 +1,70 @@
+---
+title: Using Wokwi in GitHub Actions
+description: Integrate Wokwi CI with GitHub Actions to automatically test your embedded firmware on every commit.
+---
+
+You can use Wokwi CI with GitHub Actions to run your tests on every commit. You need to have a workflow that builds your project's firmware. Add the following step to your workflow:
+
+```yaml
+- name: Test with Wokwi
+  uses: wokwi/wokwi-ci-action@v1
+  with:
+    token: ${{ secrets.WOKWI_CLI_TOKEN }}
+    path: / # directory with wokwi.toml, relative to repo's root
+    expect_text: 'Hello, world!' # optional
+```
+
+For a complete list of options, check out the [action's README](https://github.com/wokwi/wokwi-ci-action?tab=readme-ov-file#usage).
+
+## CLI Tokens
+
+<Steps>
+  <Step title="Generate a Token">
+    Create an API token on the [Wokwi CI Dashboard](https://wokwi.com/dashboard/ci).
+  </Step>
+  
+  <Step title="Add to GitHub Secrets">
+    Set up the `WOKWI_CLI_TOKEN` secret in your repository settings:
+    
+    1. Go to your repository settings
+    2. Navigate to **Secrets and variables** → **Actions**
+    3. Click **New repository secret**
+    4. Name it `WOKWI_CLI_TOKEN` and paste your token
+  </Step>
+</Steps>
+
+## Examples
+
+The following projects are set up to run on Wokwi CI. You can use them as a reference for your own projects. Check out the `.github/workflows` directory for the complete GitHub Action configuration in each example.
+
+<CardGroup cols={2}>
+  <Card title="ESP32 WiFi + FreeRTOS" href="https://github.com/wokwi/esp32-idf-hello-wifi" icon="microchip">
+    ESP32 project demonstrating WiFi and FreeRTOS tasks
+  </Card>
+  
+  <Card title="STM32 Nucleo64 C031C6" href="https://github.com/wokwi/stm32-hello-wokwi" icon="microchip">
+    STM32 project with STM32 HAL
+  </Card>
+  
+  <Card title="Raspberry Pi Pico SDK" href="https://github.com/wokwi/pico-sdk-blink" icon="microchip">
+    Includes an automation scenario that verifies the LED blinking pattern
+  </Card>
+  
+  <Card title="PlatformIO Pushbutton Counter" href="https://github.com/wokwi/platform-io-esp32-counter-ci" icon="microchip">
+    Includes an automation scenario that pushes the button and checks the serial output
+  </Card>
+  
+  <Card title="ESP32-C6 LP I2C" href="https://github.com/wokwi/esp32c6-i2c-lp" icon="microchip">
+    Includes an automation scenario that interacts with an I2C device
+  </Card>
+  
+  <Card title="Embedded Wizard Breakout Game" href="https://github.com/wokwi/esp-wrover-kit-embedded-wizard-wokwi" icon="gamepad">
+    Example of taking a screenshot of the simulated LCD display
+  </Card>
+</CardGroup>
+
+## Additional Resources
+
+<Card title="Using PlatformIO CI and Wokwi in GitHub Actions" href="https://blog.leon0399.ru/wokwi-platformio-github-actions?showSharer=true" icon="book">
+  Blog post by Leonid Meleshin
+</Card>

@@ -1,0 +1,102 @@
+---
+title: Frequently Asked Questions
+description: Common questions about Wokwi electronics simulator
+---
+
+Find answers to the most commonly asked questions about Wokwi.
+
+## General Questions
+
+<AccordionGroup>
+  <Accordion title="What does Wokwi mean?">
+    When choosing the name for Wokwi, we were looking for a short word that would be easy to pronounce and didn't have any meaning yet. We came up with a list of possible names, and picked the one we liked the most, Wokwi.
+    
+    Some of the names that didn't make it: Duvav, Hajuu, Chipine, Zeprr.
+  </Accordion>
+
+  <Accordion title="How does Wokwi work?">
+    Wokwi compiles your code into a binary firmware, and then executes the binary firmware one instruction at a time, as a real microcontroller would.
+    
+    If you want to learn about the internals, check out these resources:
+    
+    - [Raspberry Pi Pico and RP2040 Deep Dive](https://www.youtube.com/watch?v=Duel_Oaases&list=PL_tws4AXg7auiZHZsL-qfrXoMiUONBB0U&index=2) - This 5 hours course will give you good understanding of the RP2040 architecture, and how it works.
+    - [Live-coding Raspberry Pi Pico Simulator from Scratch](https://www.youtube.com/watch?v=POCUbWhBXVA&list=PLLomdjsHtJTxT-vdJHwa3z62dFXZnzYBm&index=1&t=0s) - 70 hours long live-coding series where you'll see how we built the Pi Pico simulator, along with explanations about the architecture and design decisions.
+    - [AVR8js: Simulate Arduino in JavaScript](https://blog.wokwi.com/avr8js-simulate-arduino-in-javascript/) - Blog post covering the basics of the Arduino simulation engine.
+    - [Let's Code Arduino Simulator from Scratch](https://www.youtube.com/watch?v=fArqj-USmjA) - Create a simple Arduino simulator app using Wokwi's [AVR8js](https://github.com/wokwi/avr8js) open-source AVR simulation engine (16 minutes).
+    - [Reversing the ESP32 WiFi](https://www.youtube.com/watch?v=XmaT8bMssyQ) - Learn how we prepared the ground for the ESP32 WiFi simulation by reverse engineering the WiFi hardware (32 minutes).
+  </Accordion>
+</AccordionGroup>
+
+## Using Wokwi
+
+<AccordionGroup>
+  <Accordion title="How do I find a project I saved previously?">
+    **If you haven't signed in to Wokwi:**
+    
+    Use the same device and browser that saved the project and visit [https://wokwi.com/dashboard/projects](https://wokwi.com/dashboard/projects).
+    
+    **If you signed in to Wokwi before saving projects:**
+    
+    Visit [https://wokwi.com/dashboard/projects](https://wokwi.com/dashboard/projects) to see all projects that you have saved on any device/browser. You can also navigate to your saved projects by clicking on your profile picture and selecting "My Projects" from the menu.
+    
+    <Tip>
+    Sign in to Wokwi to access your projects from any device or browser!
+    </Tip>
+  </Accordion>
+
+  <Accordion title="The simulation is slow, how can I make it faster?">
+    There are many factors that can affect the simulation speed. Here are some tips that can help you get better performance:
+    
+    - **Chrome is usually faster than Firefox** - Try using Chrome or a Chromium-based browser for better performance.
+    - **Add delays in your code** - For ESP32 / Pi Pico code, adding a `delay(10);` call at the beginning of `loop()` can help, as the simulator will have less work to do while the microcontroller is sleeping.
+    
+    ```cpp
+    void loop() {
+      delay(10);  // Give the simulator a break
+      // Your code here
+    }
+    ```
+  </Accordion>
+
+  <Accordion title="How can I use Wokwi offline?">
+    Wokwi offers an offline mode through the **Wokwi for VS Code extension**.
+    
+    To set it up and learn more, visit the official guide: [Wokwi Offline Mode Documentation](/vscode/offline-mode).
+    
+    <Note>
+    Offline mode requires the VS Code extension and is available for paid subscribers.
+    </Note>
+  </Accordion>
+</AccordionGroup>
+
+## Subscription & Billing
+
+<AccordionGroup>
+  <Accordion title="How much does Wokwi cost?">
+    **Wokwi is free for personal use.**
+    
+    For commercial users and professionals, we offer paid plans with additional features. Check out our [pricing page](https://wokwi.com/pricing) for details.
+  </Accordion>
+
+  <Accordion title="How do I change or cancel my subscription?">
+    You can manage your subscription, including updating or canceling it, by visiting the [Subscriptions page](https://wokwi.com/dashboard/subscriptions).
+  </Accordion>
+
+  <Accordion title="How can I update the payment method for my subscription?">
+    1. Go to [https://wokwi.com/dashboard/subscriptions](https://wokwi.com/dashboard/subscriptions)
+    2. Click on **"Change"** next to the payment method
+    3. Enter your new payment details
+  </Accordion>
+</AccordionGroup>
+
+## Still Have Questions?
+
+<CardGroup cols={2}>
+  <Card title="Join Discord Community" icon="discord" href="https://wokwi.com/discord">
+    Get help from the community and Wokwi team members
+  </Card>
+  
+  <Card title="Contact Support" icon="envelope" href="https://wokwi.com/contact">
+    Reach out to the Wokwi support team directly
+  </Card>
+</CardGroup>

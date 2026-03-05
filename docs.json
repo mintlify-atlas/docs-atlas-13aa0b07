@@ -1,122 +1,235 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Wokwi",
+  "theme": "aspen",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#040404",
+    "light": "#2bb673",
+    "dark": "#040404"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "https://icons.duckduckgo.com/ip3/docs.wokwi.com.ico",
+  "logo": {
+    "light": "https://media.brand.dev/4195c903-36d2-4f8d-a669-ff8125a4480e.svg",
+    "dark": "https://media.brand.dev/4195c903-36d2-4f8d-a669-ff8125a4480e.svg"
+  },
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/wokwi/wokwi-docs"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/wokwi/wokwi-docs",
+      "discord": "https://wokwi.com/discord",
+      "twitter": "https://twitter.com/WokwiMakes"
+    }
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
-              "index",
+              "introduction",
               "quickstart",
-              "development"
+              "supported-hardware",
+              "faq"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Guides",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "guides/diagram-editor",
+              "guides/keyboard-shortcuts",
+              "guides/debugger",
+              "guides/gdb-debugging",
+              "guides/serial-monitor",
+              "guides/logic-analyzer",
+              "guides/libraries",
+              "guides/micropython",
+              "guides/circuitpython",
+              "guides/esp32",
+              "guides/esp32-wifi",
+              "guides/custom-chips"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "VS Code Extension",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "vscode/getting-started",
+              "vscode/project-config",
+              "vscode/diagram-editor",
+              "vscode/debugging",
+              "vscode/offline-mode",
+              "vscode/tips-and-tricks",
+              "vscode/migrating",
+              "vscode/micropython"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Wokwi CI",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "wokwi-ci/getting-started",
+              "wokwi-ci/cli-installation",
+              "wokwi-ci/cli-usage",
+              "wokwi-ci/idf-usage",
+              "wokwi-ci/github-actions",
+              "wokwi-ci/automation-scenarios",
+              "wokwi-ci/mcp-support"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Parts Reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Overview",
             "pages": [
-              "api-reference/introduction"
+              "parts/diagram-format"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Microcontroller Boards",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "parts/wokwi-arduino-uno",
+              "parts/wokwi-arduino-nano",
+              "parts/wokwi-arduino-mega",
+              "parts/wokwi-attiny85",
+              "parts/wokwi-pi-pico",
+              "parts/wokwi-franzininho",
+              "parts/board-franzininho-wifi",
+              "parts/board-st-nucleo-c031c6",
+              "parts/board-st-nucleo-l031k6",
+              "parts/board-stm32-bluepill"
+            ]
+          },
+          {
+            "group": "Displays",
+            "pages": [
+              "parts/wokwi-7segment",
+              "parts/wokwi-tm1637-7segment",
+              "parts/wokwi-lcd1602",
+              "parts/wokwi-lcd2004",
+              "parts/wokwi-ssd1306",
+              "parts/board-grove-oled-sh1107",
+              "parts/wokwi-ili9341",
+              "parts/wokwi-nokia-5110-screen",
+              "parts/wokwi-led-matrix",
+              "parts/wokwi-max7219-matrix",
+              "parts/wokwi-tv"
+            ]
+          },
+          {
+            "group": "LEDs",
+            "pages": [
+              "parts/wokwi-led",
+              "parts/wokwi-rgb-led",
+              "parts/wokwi-neopixel",
+              "parts/wokwi-led-strip",
+              "parts/wokwi-led-ring",
+              "parts/wokwi-led-bar-graph"
+            ]
+          },
+          {
+            "group": "Sensors",
+            "pages": [
+              "parts/wokwi-dht22",
+              "parts/wokwi-ds18b20",
+              "parts/wokwi-ntc-temperature-sensor",
+              "parts/wokwi-bmp180",
+              "parts/wokwi-mpu6050",
+              "parts/wokwi-hc-sr04",
+              "parts/wokwi-photoresistor-sensor",
+              "parts/wokwi-pir-motion-sensor",
+              "parts/wokwi-gas-sensor"
+            ]
+          },
+          {
+            "group": "Input Components",
+            "pages": [
+              "parts/wokwi-pushbutton",
+              "parts/wokwi-pushbutton-6mm",
+              "parts/wokwi-slide-switch",
+              "parts/wokwi-dip-switch-8",
+              "parts/wokwi-potentiometer",
+              "parts/wokwi-slide-potentiometer",
+              "parts/wokwi-analog-joystick",
+              "parts/wokwi-membrane-keypad",
+              "parts/wokwi-ky-040",
+              "parts/wokwi-ir-remote"
+            ]
+          },
+          {
+            "group": "Motors & Actuators",
+            "pages": [
+              "parts/wokwi-servo",
+              "parts/wokwi-stepper-motor",
+              "parts/wokwi-biaxial-stepper",
+              "parts/wokwi-a4988",
+              "parts/wokwi-buzzer"
+            ]
+          },
+          {
+            "group": "Modules & ICs",
+            "pages": [
+              "parts/wokwi-ds1307",
+              "parts/wokwi-relay-module",
+              "parts/wokwi-ks2e-m-dc5",
+              "parts/board-mfrc522",
+              "parts/wokwi-hx711",
+              "parts/wokwi-74hc165",
+              "parts/wokwi-74hc595",
+              "parts/wokwi-nlsf595",
+              "parts/wokwi-microsd-card",
+              "parts/wokwi-ir-receiver",
+              "parts/wokwi-clock-generator"
+            ]
+          },
+          {
+            "group": "Basic Components",
+            "pages": [
+              "parts/wokwi-resistor"
+            ]
+          },
+          {
+            "group": "Testing & Debug",
+            "pages": [
+              "parts/wokwi-logic-analyzer",
+              "parts/wokwi-text"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Chips API",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "chips-api/getting-started",
+              "chips-api/tutorial-7seg",
+              "chips-api/chip-json"
+            ]
+          },
+          {
+            "group": "API Reference",
+            "pages": [
+              "chips-api/gpio",
+              "chips-api/analog",
+              "chips-api/time",
+              "chips-api/uart",
+              "chips-api/i2c",
+              "chips-api/spi",
+              "chips-api/attributes",
+              "chips-api/framebuffer"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    ]
   }
 }

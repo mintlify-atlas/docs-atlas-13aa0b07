@@ -1,0 +1,31 @@
+---
+title: Clock Generator
+description: Configurable clock generator component for timing and clock signals
+---
+
+Configurable clock generator component.
+
+## Pins
+
+<ParamField path="CLK" type="output">
+  Clock signal output
+</ParamField>
+
+## Attributes
+
+<ParamField path="frequency" type="string" default="10k">
+  Set the frequency of the generator (in Hz)
+</ParamField>
+
+You can suffix your value with "k" or "m" to get KHz or MHz values. For example:
+- "10k" is a 10KHz clock
+- "1.3m" is a 1.3MHz clock
+- "1" is a 1Hz clock
+
+<Warning>
+Frequencies over 100KHz may slow down the simulation.
+</Warning>
+
+## Simulator Examples
+
+- [Tiny Tapeout Template](https://wokwi.com/projects/354858054593504257)

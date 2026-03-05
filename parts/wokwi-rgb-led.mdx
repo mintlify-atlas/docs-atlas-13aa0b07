@@ -1,0 +1,40 @@
+---
+title: RGB LED
+description: 5mm Red, Green and Blue (RGB) LED
+---
+
+5mm Red, Green and Blue (RGB) LED.
+
+## Pin names
+
+<ParamField path="R" type="pin">
+  Red LED
+</ParamField>
+
+<ParamField path="G" type="pin">
+  Green LED
+</ParamField>
+
+<ParamField path="B" type="pin">
+  Blue LED
+</ParamField>
+
+<ParamField path="COM" type="pin">
+  Common pin (anode or cathode, depending on the "common" attribute)
+</ParamField>
+
+<Note>
+By default, the common pin is the anode (positive). You can change it by setting the "common" attribute to "cathode".
+</Note>
+
+## Attributes
+
+<ParamField path="common" type="string" default="anode">
+  The common pin type: "cathode" or "anode"
+</ParamField>
+
+## Simulator examples
+
+- [RGB LED with 3 linear sliders - common cathode](https://wokwi.com/projects/306455554559050306)
+- [RGB LED with 3 linear sliders - common anode](https://wokwi.com/projects/435392523281372161)
+- [Soft pulsating RGB LED](https://wokwi.com/projects/306461175146611264)
